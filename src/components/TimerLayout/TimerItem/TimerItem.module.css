@@ -1,0 +1,28 @@
+.timerItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+    min-width: 400px;
+    transition: background 0.3s ease-in-out;
+}
+
+.timerActivity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.buttons {
+    display: flex;
+}
