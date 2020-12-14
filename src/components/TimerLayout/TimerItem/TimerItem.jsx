@@ -6,7 +6,7 @@ import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 
 
-const TimerItem = ({timerLabel, currentTime, paused}) => {
+const TimerItem = ({timerLabel, currentTime, isPaused, removeTimer, togglePause}) => {
   return (
     <div className={classes.timerItem}>
       <div>
@@ -17,10 +17,10 @@ const TimerItem = ({timerLabel, currentTime, paused}) => {
           { currentTime }
         </div>
         <div className={classes.buttons}>
-          <div>
-            <TimerButton icon={paused ? PauseCircleOutlineIcon : PlayCircleOutlineIcon} />
+          <div onClick={togglePause}>
+            <TimerButton icon={isPaused ? PauseCircleOutlineIcon : PlayCircleOutlineIcon} />
           </div>
-          <div>
+          <div onClick={removeTimer}>
             <TimerButton icon={RemoveCircleOutlineIcon}/>
           </div>
         </div>
