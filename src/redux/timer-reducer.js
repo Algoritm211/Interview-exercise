@@ -1,4 +1,6 @@
 import moment from 'moment'
+import momentDurationFormatSetup from 'moment-duration-format';
+// momentDurationFormatSetup(moment);
 
 const ADD_NEW_TIMER = 'timer/ADD_NEW_TIMER'
 const UPDATE_TIMERS = 'timer/UPDATE_TIMERS'
@@ -8,8 +10,8 @@ const TOGGLE_PAUSE_TIMER = 'timer/TOGGLE_PAUSE_TIMER'
 
 const initialState = {
   timers: [
-    {id: 1, label: 'Timer1', currentTime: '00:00:03', isPaused: false},
-    {id: 2, label: 'Timer2', currentTime: '00:34:45', isPaused: true},
+    {id: 1, label: 'Timer1', currentTime: '00:00:05', isPaused: false},
+    {id: 2, label: 'Timer2', currentTime: '25:59:56', isPaused: true},
     {id: 3, label: 'Timer3', currentTime: '00:05:56', isPaused: false},
   ]
 }
@@ -72,17 +74,23 @@ const setNewTimers = (newTimers) => {
   }
 }
 
+const getNewTime = (input) => {
+  let seconds = moment.duration(input).asSeconds() + 1;
+  // let oldTime = moment(input, 'HH:mm:ss');
+  // let newTime = moment(oldTime).add(1, 'second');
+  let dur = moment.duration(seconds, 'seconds');
+  return dur.format('HH:mm:ss', {trim: false});
+};
+
 export const processTime = () => {
   return (dispatch, getState) =>{
     const timers = getState().timer.timers
 
     const newTimers = timers.map(timer => {
       if (!timer.isPaused) {
-        let oldTime = moment(timer.currentTime, 'HH:mm:ss');
-        let newTime = moment(oldTime).add(1, 'second');
         return {
           ...timer,
-          currentTime: newTime.format('HH:mm:ss')
+          currentTime: getNewTime(timer.currentTime)    //add .format('HH:mm:ss') if newTime MomentJS object
         }
       } else {
         return timer
