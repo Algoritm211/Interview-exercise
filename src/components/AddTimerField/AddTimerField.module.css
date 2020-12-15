@@ -1,0 +1,30 @@
+.timerInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;align-items: center;
+    background: #eee;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+.timerInput label {
+    margin-bottom: 3px;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+}
+
+.timerInput input {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #bebebe;
+    padding: 7px;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 10px;
+}
+

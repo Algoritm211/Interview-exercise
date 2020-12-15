@@ -18,7 +18,7 @@ const TimerItem = ({timerLabel, currentTime, isPaused, removeTimer, togglePause}
         </div>
         <div className={classes.buttons}>
           <div onClick={togglePause}>
-            <TimerButton icon={isPaused ? PauseCircleOutlineIcon : PlayCircleOutlineIcon} />
+            <TimerButton icon={isPaused ? PlayCircleOutlineIcon : PauseCircleOutlineIcon} />
           </div>
           <div onClick={removeTimer}>
             <TimerButton icon={RemoveCircleOutlineIcon}/>

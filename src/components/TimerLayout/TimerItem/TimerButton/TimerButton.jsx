@@ -1,13 +1,12 @@
 import React from "react";
-import {Button, IconButton} from '@material-ui/core'
-
+import { IconButton, makeStyles} from '@material-ui/core'
+import classes from './TimerButton.module.css'
 
 const TimerButton = ({icon}) => {
-
   const Icon = icon
   return (
     <IconButton>
-      <Icon />
+      <Icon className={classes.timerButton}/>
     </IconButton>
   )
 }

@@ -21,7 +21,8 @@ export const timerReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_NEW_TIMER:
       return {
-        ...state
+        ...state,
+        timers: [action.newTimer, ...state.timers]
       }
     case UPDATE_TIMERS:
       return {
@@ -49,6 +50,18 @@ export const timerReducer = (state = initialState, action) => {
       }
     default:
       return state
+  }
+}
+
+export const addTimer = (timerName) => {
+  return {
+    type: ADD_NEW_TIMER,
+    newTimer: {
+      id: Date.now().toString(),
+      label: timerName === '' ? Date.now().toString() : timerName,
+      currentTime: '00:00:00',
+      isPaused: false
+    }
   }
 }
 

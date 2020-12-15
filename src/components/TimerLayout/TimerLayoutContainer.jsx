@@ -1,7 +1,7 @@
 import React from "react";
 import TimerLayout from "./TimerLayout";
 import {connect} from "react-redux";
-import {processTime, removeTimer, togglePause} from "../../redux/timer-reducer";
+import { processTime, removeTimer, togglePause} from "../../redux/timer-reducer";
 
 class TimerLayoutContainer extends React.Component {
 
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     togglePause: (id) => {
       dispatch(togglePause(id))
-    }
+    },
   }
 }
 
