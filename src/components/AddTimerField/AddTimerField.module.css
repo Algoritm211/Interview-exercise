@@ -1,5 +1,6 @@
 .timerInput {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;align-items: center;
     background: #eee;
@@ -7,6 +8,7 @@
     padding: 15px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     color: black;
+    width: 450px;
 }
 
 .timerInput label {

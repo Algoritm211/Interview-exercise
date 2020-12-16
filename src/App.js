@@ -2,16 +2,24 @@ import React from "react";
 import AddTimerField from "./components/AddTimerField/AddTimerField";
 import TimerLayoutContainer from "./components/TimerLayout/TimerLayoutContainer";
 import classes from './App.module.css'
+import {connect} from "react-redux";
 
-function App() {
+function App(props) {
+
   return (
     <div className={ classes.mainApp }>
       <div>
         <AddTimerField/>
-        <TimerLayoutContainer/>
+        {!props.isTimersHidden && <TimerLayoutContainer/>}
       </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isTimersHidden: state.timer.isHidden
+  }
+}
+
+export default connect(mapStateToProps)(App) ;

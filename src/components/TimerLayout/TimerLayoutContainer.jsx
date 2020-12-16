@@ -1,20 +1,33 @@
 import React from "react";
 import TimerLayout from "./TimerLayout";
 import {connect} from "react-redux";
-import { processTime, removeTimer, togglePause} from "../../redux/timer-reducer";
+import {
+  getTimersFromLocalStorage,
+  processTime,
+  removeTimer,
+  setTimersToLocalStorage,
+  togglePause
+} from "../../redux/timer-reducer";
 
 class TimerLayoutContainer extends React.Component {
 
   componentDidMount() {
+    this.props.getTimersFromLocalStorage()
     this.timerId = setInterval(this.props.processTime, 1000)
   }
 
   componentWillUnmount() {
     clearInterval(this.timerId)
+    this.props.setTimersToLocalStorage()
   }
 
 
   render() {
+    if (this.props.isTimersHidden) {
+      return(
+        <div style={{textAlign: 'center', marginTop: '25px'}}>Timers Hidden</div>
+      )
+    }
     return (
       <TimerLayout {...this.props}/>
     )
@@ -23,7 +36,7 @@ class TimerLayoutContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    timers: state.timer.timers
+    timers: state.timer.timers,
   }
 }
 
@@ -38,6 +51,12 @@ const mapDispatchToProps = (dispatch) => {
     togglePause: (id) => {
       dispatch(togglePause(id))
     },
+    setTimersToLocalStorage: () => {
+      dispatch(setTimersToLocalStorage())
+    },
+    getTimersFromLocalStorage: () => {
+      dispatch(getTimersFromLocalStorage())
+    }
   }
 }
 

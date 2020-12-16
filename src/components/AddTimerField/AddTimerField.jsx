@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import classes from './AddTimerField.module.css'
 import {Button} from "@material-ui/core";
 import AddBoxIcon from '@material-ui/icons/AddBox';
-import {addTimer} from "../../redux/timer-reducer";
+import {addTimer, hideTimers, showTimers} from "../../redux/timer-reducer";
 import {connect} from "react-redux";
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 
 const AddTimerField = (props) => {
@@ -38,6 +40,30 @@ const AddTimerField = (props) => {
           &nbsp;
           Add new timer
         </Button>
+        &nbsp;&nbsp;
+        {
+          !props.isTimersHidden
+          ? <Button
+              variant="contained"
+              color="primary"
+              onClick={props.hideTimers}
+            >
+              <ArrowUpwardIcon />
+              &nbsp;
+              Hide timers
+            </Button>
+
+         : <Button
+              variant="contained"
+              color="primary"
+              onClick={props.showTimers}
+            >
+              <ArrowDownwardIcon />
+              &nbsp;
+              Show timers
+            </Button>
+        }
+
       </div>
     </div>
   )
@@ -45,7 +71,7 @@ const AddTimerField = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-
+    isTimersHidden: state.timer.isHidden
   }
 }
 
@@ -53,7 +79,13 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addTimer: (timerName) => {
       dispatch(addTimer(timerName))
-    }
+    },
+    hideTimers: () => {
+      dispatch(hideTimers())
+    },
+    showTimers: () => {
+      dispatch(showTimers())
+    },
   }
 }
 
