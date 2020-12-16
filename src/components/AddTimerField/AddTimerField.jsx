@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import classes from './AddTimerField.module.css'
+import classes from './AddTimerField.module.scss'
 import {Button} from "@material-ui/core";
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import {addTimer, hideTimers, showTimers} from "../../redux/timer-reducer";
@@ -30,7 +30,7 @@ const AddTimerField = (props) => {
           onChange={ (event) => setInputValue(event.target.value) }
         />
       </div>
-      <div>
+      <div className={classes.timerInterfaceButtons}>
         <Button
           onClick={ addNewTimer }
           variant="contained"

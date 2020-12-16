@@ -1,0 +1,55 @@
+
+@mixin timerInputCommon {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+@media screen and (min-width: 320px) and (max-width: 560px){
+    .timerInput {
+        @include timerInputCommon;
+        margin: 10px auto 0 auto;
+        width: 90vw;
+    }
+
+    .timerInterfaceButtons {
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 560px) {
+    .timerInput {
+        @include timerInputCommon;
+        width: 560px;
+    }
+}
+
+.timerInput label {
+    margin-bottom: 3px;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+}
+
+.timerInput input {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #bebebe;
+    padding: 7px;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 10px;
+}
+

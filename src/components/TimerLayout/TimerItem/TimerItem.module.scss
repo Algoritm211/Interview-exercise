@@ -1,0 +1,48 @@
+@mixin timerItemCommon {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 10px 10px;
+    cursor: pointer;
+    margin: 10px auto 5px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 560px) {
+    .timerItem {
+        @include timerItemCommon;
+        min-width: 90vw;
+        font-size: 12px;
+        text-overflow: ellipsis;
+        transition: background 0.3s ease-in-out;
+    }
+}
+
+
+@media screen and (min-width: 560px) {
+    .timerItem {
+        @include timerItemCommon;
+        cursor: pointer;
+        min-width: 560px;
+        transition: background 0.3s ease-in-out;
+    }
+}
+
+
+.timerActivity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.buttons {
+    display: flex;
+}

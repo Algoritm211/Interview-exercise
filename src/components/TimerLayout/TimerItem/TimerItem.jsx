@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './TimerItem.module.css'
+import classes from './TimerItem.module.scss'
 import TimerButton from "./TimerButton/TimerButton";
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
