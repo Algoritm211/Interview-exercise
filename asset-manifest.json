@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Interview-exercise/static/css/main.718c54c2.chunk.css",
+    "main.css": "/Interview-exercise/static/css/main.019155a5.chunk.css",
     "main.js": "/Interview-exercise/static/js/main.b94ebe1c.chunk.js",
     "main.js.map": "/Interview-exercise/static/js/main.b94ebe1c.chunk.js.map",
     "runtime-main.js": "/Interview-exercise/static/js/runtime-main.5214f045.js",
@@ -10,13 +10,13 @@
     "static/js/3.c3854e67.chunk.js": "/Interview-exercise/static/js/3.c3854e67.chunk.js",
     "static/js/3.c3854e67.chunk.js.map": "/Interview-exercise/static/js/3.c3854e67.chunk.js.map",
     "index.html": "/Interview-exercise/index.html",
-    "static/css/main.718c54c2.chunk.css.map": "/Interview-exercise/static/css/main.718c54c2.chunk.css.map",
+    "static/css/main.019155a5.chunk.css.map": "/Interview-exercise/static/css/main.019155a5.chunk.css.map",
     "static/js/2.d94b480c.chunk.js.LICENSE.txt": "/Interview-exercise/static/js/2.d94b480c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5214f045.js",
     "static/js/2.d94b480c.chunk.js",
-    "static/css/main.718c54c2.chunk.css",
+    "static/css/main.019155a5.chunk.css",
     "static/js/main.b94ebe1c.chunk.js"
   ]
 }
