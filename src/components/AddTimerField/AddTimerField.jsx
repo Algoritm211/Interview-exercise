@@ -18,47 +18,47 @@ const AddTimerField = (props) => {
   }
 
   return (
-    <div className={classes.timerInput}>
+    <div className={ classes.timerInput }>
       <div>
-        <label htmlFor={'timerInput'}>Enter your new timer name</label>
+        <label htmlFor={ 'timerInput' }>Enter your new timer name</label>
       </div>
       <div>
         <input
-          type={'text'}
-          id={'timerInput'}
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
+          type={ 'text' }
+          id={ 'timerInput' }
+          value={ inputValue }
+          onChange={ (event) => setInputValue(event.target.value) }
         />
       </div>
       <div>
         <Button
-          onClick={addNewTimer}
+          onClick={ addNewTimer }
           variant="contained"
           color="primary"
-          >
-          <AddBoxIcon />
+        >
+          <AddBoxIcon/>
           &nbsp;
           Add new timer
         </Button>
         &nbsp;&nbsp;
         {
           !props.isTimersHidden
-          ? <Button
+            ? <Button
               variant="contained"
               color="primary"
-              onClick={props.hideTimers}
+              onClick={ props.hideTimers }
             >
-              <ArrowUpwardIcon />
+              <ArrowUpwardIcon/>
               &nbsp;
               Hide timers
             </Button>
 
-         : <Button
+            : <Button
               variant="contained"
               color="primary"
-              onClick={props.showTimers}
+              onClick={ props.showTimers }
             >
-              <ArrowDownwardIcon />
+              <ArrowDownwardIcon/>
               &nbsp;
               Show timers
             </Button>

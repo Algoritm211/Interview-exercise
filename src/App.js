@@ -10,7 +10,7 @@ function App(props) {
     <div className={ classes.mainApp }>
       <div>
         <AddTimerField/>
-        {!props.isTimersHidden && <TimerLayoutContainer/>}
+        { !props.isTimersHidden && <TimerLayoutContainer/> }
       </div>
     </div>
   );
@@ -22,4 +22,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(App) ;
+export default connect(mapStateToProps)(App);

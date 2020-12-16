@@ -1,5 +1,6 @@
 import moment from "moment";
 import momentDurationFormatSetup from 'moment-duration-format';
+
 momentDurationFormatSetup(moment);
 
 export const getNewTime = (input, addingNumber = 0) => {

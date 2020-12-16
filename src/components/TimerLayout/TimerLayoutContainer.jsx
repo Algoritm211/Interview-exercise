@@ -24,12 +24,12 @@ class TimerLayoutContainer extends React.Component {
 
   render() {
     if (this.props.isTimersHidden) {
-      return(
-        <div style={{textAlign: 'center', marginTop: '25px'}}>Timers Hidden</div>
+      return (
+        <div style={ {textAlign: 'center', marginTop: '25px'} }>Timers Hidden</div>
       )
     }
     return (
-      <TimerLayout {...this.props}/>
+      <TimerLayout { ...this.props }/>
     )
   }
 }

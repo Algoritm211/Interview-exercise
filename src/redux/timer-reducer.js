@@ -110,7 +110,7 @@ export const hideTimers = () => {
 }
 
 export const processTime = () => {
-  return (dispatch, getState) =>{
+  return (dispatch, getState) => {
     const timers = getState().timer.timers
 
     const newTimers = timers.map(timer => {
@@ -158,7 +158,7 @@ export const getTimersFromLocalStorage = () => {
             currentTime: newTime,
           }
         } else {
-         return timer
+          return timer
         }
       })
       dispatch(setNewTimers(timersArrayReadyToState))

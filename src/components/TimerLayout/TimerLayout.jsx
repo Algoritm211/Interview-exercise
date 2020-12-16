@@ -1,18 +1,17 @@
-import React, {useEffect} from "react";
+import React from "react";
 import TimerItem from "./TimerItem/TimerItem";
-import classes from './TimerLayout.module.css'
 
 const TimerLayout = ({timers, removeTimer, togglePause}) => {
 
   const timersTable = timers.map((timer, index) => {
     return (
       <TimerItem
-        key={index}
-        timerLabel={timer.label}
-        currentTime={timer.currentTime}
-        isPaused={timer.isPaused}
-        removeTimer={() => removeTimer(timer.id)}
-        togglePause={() => togglePause(timer.id)}
+        key={ index }
+        timerLabel={ timer.label }
+        currentTime={ timer.currentTime }
+        isPaused={ timer.isPaused }
+        removeTimer={ () => removeTimer(timer.id) }
+        togglePause={ () => togglePause(timer.id) }
       />
     )
   })
